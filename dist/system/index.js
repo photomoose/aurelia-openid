@@ -18,6 +18,8 @@ System.register(['./aurelia-openid'], function (_export, _context) {
     setters: [function (_aureliaOpenid) {
       OpenIdClient = _aureliaOpenid.OpenIdClient;
     }],
-    execute: function () {}
+    execute: function () {
+      _export('OpenIdClient', OpenIdClient);
+    }
   };
 });

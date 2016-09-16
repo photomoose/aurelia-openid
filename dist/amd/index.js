@@ -4,6 +4,7 @@ define(['exports', './aurelia-openid'], function (exports, _aureliaOpenid) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.OpenIdClient = undefined;
   exports.configure = configure;
   function configure(aurelia, callback) {
     var instance = aurelia.container.get(_aureliaOpenid.OpenIdClient);
@@ -12,4 +13,6 @@ define(['exports', './aurelia-openid'], function (exports, _aureliaOpenid) {
       callback(instance);
     }
   }
+
+  exports.OpenIdClient = _aureliaOpenid.OpenIdClient;
 });
