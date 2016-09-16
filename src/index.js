@@ -7,3 +7,5 @@ export function configure(aurelia, callback) {
     callback(instance);
   }
 }
+
+export {OpenIdClient};
