@@ -60,9 +60,17 @@ define(['exports', 'aurelia-framework', 'oidc-client', 'aurelia-event-aggregator
         _this.ea.publish('openid.userSignedOut');
       });
 
+      this.userManager.events.addSilentRenewError(function (e) {
+        _this.ea.publish('openid.silentRenewError');
+      });
+
       this.userManager.events.addAccessTokenExpired(function (e) {
         _this.isAuthenticated = false;
         _this.ea.publish('openid.accessTokenExpired');
+      });
+
+      this.userManager.events.addAccessTokenExpiring(function (e) {
+        _this.ea.publish('openid.accessTokenExpiring');
       });
 
       if (Array.isArray(config.endpoints)) {
