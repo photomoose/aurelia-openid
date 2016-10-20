@@ -60,6 +60,11 @@ define(['exports', 'aurelia-framework', 'oidc-client', 'aurelia-event-aggregator
         _this.ea.publish('openid.userSignedOut');
       });
 
+      this.userManager.events.addAccessTokenExpired(function (e) {
+        _this.isAuthenticated = false;
+        _this.ea.publish('openid.accessTokenExpired');
+      });
+
       if (Array.isArray(config.endpoints)) {
         config.endpoints.forEach(function (endpointToPatch) {
           _this._configureEndpoint(endpointToPatch);

@@ -46,6 +46,19 @@ export class OpenIdClient {
       this.ea.publish('openid.userSignedOut');
     });
 
+    this.userManager.events.addSilentRenewError(e => {
+      this.ea.publish('openid.silentRenewError');
+    });
+
+    this.userManager.events.addAccessTokenExpired(e => {
+      this.isAuthenticated = false;
+      this.ea.publish('openid.accessTokenExpired');
+    });
+
+    this.userManager.events.addAccessTokenExpiring(e => {
+      this.ea.publish('openid.accessTokenExpiring');
+    });
+
     if (Array.isArray(config.endpoints)) {
       config.endpoints.forEach(endpointToPatch => {
         this._configureEndpoint(endpointToPatch);
