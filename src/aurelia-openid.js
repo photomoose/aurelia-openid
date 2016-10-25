@@ -77,6 +77,10 @@ export class OpenIdClient {
     return this.userManager.signinRedirect(args);
   }
 
+  signinSilent() {
+    return this.userManager.signinSilent();
+  }
+
   signinCallback() {
     return this.userManager.signinRedirectCallback();
   }
@@ -84,7 +88,6 @@ export class OpenIdClient {
   signinSilentCallback() {
     return this.userManager.signinSilentCallback();
   }
-
 
   signoutRedirect() {
     return this.userManager.signoutRedirect({
