@@ -93,6 +93,10 @@ var OpenIdClient = exports.OpenIdClient = (_dec = (0, _aureliaFramework.inject)(
     return this.userManager.signinRedirect(args);
   };
 
+  OpenIdClient.prototype.signinSilent = function signinSilent() {
+    return this.userManager.signinSilent();
+  };
+
   OpenIdClient.prototype.signinCallback = function signinCallback() {
     return this.userManager.signinRedirectCallback();
   };

@@ -77,6 +77,10 @@ export let OpenIdClient = (_dec = inject(EventAggregator, Config), _dec(_class =
     return this.userManager.signinRedirect(args);
   }
 
+  signinSilent() {
+    return this.userManager.signinSilent();
+  }
+
   signinCallback() {
     return this.userManager.signinRedirectCallback();
   }

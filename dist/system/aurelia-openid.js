@@ -100,6 +100,10 @@ System.register(['aurelia-framework', 'oidc-client', 'aurelia-event-aggregator',
           return this.userManager.signinRedirect(args);
         };
 
+        OpenIdClient.prototype.signinSilent = function signinSilent() {
+          return this.userManager.signinSilent();
+        };
+
         OpenIdClient.prototype.signinCallback = function signinCallback() {
           return this.userManager.signinRedirectCallback();
         };
