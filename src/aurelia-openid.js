@@ -103,6 +103,10 @@ export class OpenIdClient {
     return this.userManager.removeUser();
   }
 
+  clearStaleState() {
+    return this.userManager.clearStaleState();
+  }
+
   _configureEndpoint(endpointName) {
     let endpoint = this.clientConfig.getEndpoint(endpointName);
 
