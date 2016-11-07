@@ -103,6 +103,10 @@ export let OpenIdClient = (_dec = inject(EventAggregator, Config), _dec(_class =
     return this.userManager.removeUser();
   }
 
+  clearStaleState() {
+    return this.userManager.clearStaleState();
+  }
+
   _configureEndpoint(endpointName) {
     let endpoint = this.clientConfig.getEndpoint(endpointName);
 

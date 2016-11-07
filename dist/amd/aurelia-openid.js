@@ -116,6 +116,10 @@ define(['exports', 'aurelia-framework', 'oidc-client', 'aurelia-event-aggregator
       return this.userManager.removeUser();
     };
 
+    OpenIdClient.prototype.clearStaleState = function clearStaleState() {
+      return this.userManager.clearStaleState();
+    };
+
     OpenIdClient.prototype._configureEndpoint = function _configureEndpoint(endpointName) {
       var _this2 = this;
 
