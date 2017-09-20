@@ -107,6 +107,10 @@ export class OpenIdClient {
     return this.userManager.clearStaleState();
   }
 
+  querySessionStatus() {
+    return this.userManager.querySessionStatus();
+  }
+
   _configureEndpoint(endpointName) {
     let endpoint = this.clientConfig.getEndpoint(endpointName);
 
