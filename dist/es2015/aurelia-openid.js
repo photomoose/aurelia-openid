@@ -107,20 +107,24 @@ export let OpenIdClient = (_dec = inject(EventAggregator, Config), _dec(_class =
     return this.userManager.clearStaleState();
   }
 
+  querySessionStatus() {
+    return this.userManager.querySessionStatus();
+  }
+
   _configureEndpoint(endpointName) {
     let endpoint = this.clientConfig.getEndpoint(endpointName);
 
-    Log.info(`Applying authorization header interceptor to endpoint '${ endpointName }'.`);
+    Log.info(`Applying authorization header interceptor to endpoint '${endpointName}'.`);
 
     if (!endpoint) {
-      throw new Error(`There is no '${ endpointName }' endpoint registered.`);
+      throw new Error(`There is no '${endpointName}' endpoint registered.`);
     }
     let client = endpoint.client;
     client.interceptors.push({
       request: request => {
         return this.getUser().then(user => {
           if (user) {
-            request.headers.set('Authorization', `Bearer ${ user.access_token }`);
+            request.headers.set('Authorization', `Bearer ${user.access_token}`);
           }
 
           return request;

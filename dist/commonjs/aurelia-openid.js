@@ -123,6 +123,10 @@ var OpenIdClient = exports.OpenIdClient = (_dec = (0, _aureliaFramework.inject)(
     return this.userManager.clearStaleState();
   };
 
+  OpenIdClient.prototype.querySessionStatus = function querySessionStatus() {
+    return this.userManager.querySessionStatus();
+  };
+
   OpenIdClient.prototype._configureEndpoint = function _configureEndpoint(endpointName) {
     var _this2 = this;
 

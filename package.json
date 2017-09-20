@@ -1,6 +1,6 @@
 {
   "name": "aurelia-openid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Aurelia plugin to wrap oidc-client and aurelia-api.",
   "keywords": [
     "aurelia",
